@@ -39,7 +39,7 @@ class Chip16CPU:
         print "Waiting for ",romsize,"bytes, but ",size," bytes was read"
 
     self.R = [0x0000]*16
-    self.pc = 0x0000
+    self.pc = start
     self.sp = 0xFDF0
     self.stack = []
     self.screen = bytearray(320*240)
