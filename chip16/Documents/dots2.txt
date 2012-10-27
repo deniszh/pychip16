@@ -1,0 +1,18 @@
+=====================
+ "dots2" for Chip16:
+=====================
+ 
+ Author: tronix286
+ Date: 03/22/2012
+
+========
+ About:
+========
+
+ Very flashy sine demo.
+
+===========
+ Controls:
+===========
+
+ None.

@@ -1,0 +1,21 @@
+=====================
+ "alien" for Chip16:
+=====================
+ 
+ Author: Refraction
+ Date: 06/30/2012
+
+========
+ About:
+========
+
+ Alien (Alien Butt Kickers) is a classic space shooter game.
+
+===========
+ Controls:
+===========
+
+ LEFT - Move ship left.
+ RIGHT - Move ship right.
+ Start - Start game.
+ A - Fire.

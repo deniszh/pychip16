@@ -1,0 +1,18 @@
+===================
+ "xor" for Chip16:
+===================
+ 
+ Author: Tykel
+ Date: 07/12/2012
+
+========
+ About:
+========
+
+ Grayscale texture demo.
+ 
+===========
+ Controls:
+===========
+ 
+ None.

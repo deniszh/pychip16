@@ -1,0 +1,19 @@
+=====================
+ "Water" for Chip16:
+=====================
+ 
+ Author: Tykel
+ Date: 06/06/2012
+
+========
+ About:
+========
+
+ Demo depicts a view on the sea, with a boat moving in the distance.
+ You hear the waves crashing in, and on occasion, the boat sounding its horn.
+
+===========
+ Controls:
+===========
+
+ None.

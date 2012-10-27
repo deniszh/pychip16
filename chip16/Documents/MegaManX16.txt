@@ -1,0 +1,21 @@
+==========================
+ "MegaManX16" for Chip16:
+==========================
+ 
+ Author: Prads
+ Date: 07/04/2012
+
+========
+ About:
+========
+
+ Mega Man inspired game for Chip16.
+ The goal of the game is to kill the boss on the right side.
+
+===========
+ Controls:
+===========
+
+ D-PAD - Move player.
+ Start - Start game.
+ A - Shoot.

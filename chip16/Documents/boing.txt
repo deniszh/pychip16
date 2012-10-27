@@ -1,0 +1,18 @@
+=====================
+ "boing" for Chip16:
+=====================
+ 
+ Author: paul_nicholls
+ Date: 07/11/2012
+
+========
+ About:
+========
+
+ Chip16 remake of the Amiga boing demo.
+
+===========
+ Controls:
+===========
+
+ None.

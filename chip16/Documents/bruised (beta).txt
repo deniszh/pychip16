@@ -1,0 +1,23 @@
+==============================
+ "bruised (Beta)" for Chip16:
+==============================
+ 
+ Author: Refraction
+ Date: 07/11/2012
+
+========
+ About:
+========
+
+ Bruised is a fighting game.
+ Beta version lacks certain features (eg. sound).
+ 
+===========
+ Controls:
+===========
+ 
+ LEFT - Move character left.
+ RIGHT - Move character right.
+ A - Punch.
+ B - Kick.
+ A+B - Block.
