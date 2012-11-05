@@ -52,6 +52,11 @@ class Chip16CPU:
     self.loglevel = LEVELS[log_level]
     self.logEnabled = True
 
+    pygame.init()
+    self.bgc = 0x000000
+    self.window = pygame.display.set_mode((320,240))
+    self.window.fill((0,0,0))
+
   def writeMem(self, addr, data):
     packed = struct.pack('<H', data)
     for i,byte in enumerate(packed):
@@ -82,14 +87,28 @@ class Chip16CPU:
   def runOpcode(self, opcode):
     # FIXME stub
     self.log.info('[0x%04X]: 0x%08X' % (self.pc, opcode))
+    a = (opcode & 0xFF000000) >> 24
     x = (opcode & 0x0F0000) >> 16
     y = (opcode & 0xF00000) >> 20
     n = (opcode & 0x0F00) >> 8
     ll = (opcode & 0xFF00) >> 8
     hh = opcode & 0xFF
-    self.log.debug('x:0x%02X y:0x%02X n:0x%02X ll:0x%02X hh:0x%02X' % (x,y,n,ll,hh))
+    self.log.debug('a:0x%02X x:0x%02X y:0x%02X n:0x%02X ll:0x%02X hh:0x%02X' % (a,x,y,n,ll,hh))
     for i,val in enumerate(self.R):
       self.log.debug('R%x: 0x%04X' % (i, val))
+    # main decode cycle
+    if opcode == 0x0:
+       # NOOP
+       pass
+    elif a == 0x01:
+      # CLS
+      self.window.fill((0,0,0))
+    elif a == 0x02:
+      # VBLNK
+      self.log.warning('TODO VBLNK')
+    else:
+      # Unknown
+      self.log.warning('UNKNOWN OPCODE')
     self.pc += 1
     return
 

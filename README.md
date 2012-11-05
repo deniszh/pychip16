@@ -12,4 +12,4 @@ For Chip16 info please check http://forums.ngemu.com/showthread.php?t=145620
 chip16 directory contains Chip-16 demos and games pack v16.07.2012 w/o sources
 
 STATUS
-v 0.0.1 - ROM load code and main cycle 
+v 0.0.1 - ROM load code and main cycle
