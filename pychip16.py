@@ -249,15 +249,15 @@ class Chip16CPU:
       self.R[x] = self.readMem(hhll)
     # LDM RX, RY
     elif a == 0x23:
-      self.R[x] = self.readMem(R[y])
+      self.R[x] = self.readMem(self.R[y])
     # MOV RX, RY
     elif a == 0x24:
       self.R[x] = self.R[y]
     # STM RX, HHLL
     elif a == 0x30:
-      self.writeMem(hhll,R[x])
+      self.writeMem(hhll,self.R[x])
     # STM RX, RY
-      self.writemem(R[y],R[x])
+      self.writemem(self.R[y],self.R[x])
     else:
       # Unknown
       self.log.warning('UNKNOWN OPCODE')
