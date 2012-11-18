@@ -154,6 +154,7 @@ class Chip16CPU:
       self.log.debug('R%x: 0x%04X' % (i, val))
 
     # main decode cycle
+    self.pc =+ 1
     # NOOP
     if opcode == 0x0:
        pass
@@ -221,16 +222,45 @@ class Chip16CPU:
       self.pc = hhll
     # RET
     elif a == 0x15:
-      selp.pc = self.popStack()
+      self.pc = self.popStack()
       self.sp =- 2
     # JMP RX
     elif a == 0x16:
       self.pc = self.R[x]
-
+    # Cx HHLL
+    elif a == 0x17:
+      if self.cond(x):
+        self.pushStack(self.pc)
+        self.sp =+ 2
+        self.pc = hhll
+    # CALL Rx
+    elif a == 0x18:
+      self.pushStack(self.pc)
+      self.sp =+ 2
+      self.pc = self.R[x]
+    # LDI RX, HHLL
+    elif a == 0x20:
+      self.R[x] = hhll
+    # LDI SP, HHLL
+    elif a == 0x21:
+      self.sp = hhll
+    # LDM RX, HHLL
+    elif a == 0x22:
+      self.R[x] = self.readMem(hhll)
+    # LDM RX, RY
+    elif a == 0x23:
+      self.R[x] = self.readMem(R[y])
+    # MOV RX, RY
+    elif a == 0x24:
+      self.R[x] = self.R[y]
+    # STM RX, HHLL
+    elif a == 0x30:
+      self.writeMem(hhll,R[x])
+    # STM RX, RY
+      self.writemem(R[y],R[x])
     else:
       # Unknown
       self.log.warning('UNKNOWN OPCODE')
-      self.pc =+ 1
     return self.pc
 
   def run(self):
